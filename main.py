@@ -4,7 +4,7 @@ import numpy as np
 import pytesseract as tess
 from PIL import Image
   
-im = cv2.imread("test3.jpg")#load anh
+im = cv2.imread("test6.jpg")#load anh
 
 cv2.imshow('Input', im)
 im_gray = cv2.cvtColor(im,cv2.COLOR_BGR2GRAY)#chuyen sang anh xam
@@ -40,7 +40,7 @@ for cnt in contours:
         area = cv2.contourArea(cnt)
         if area > largest_rectangle[0]:
             largest_rectangle = [cv2.contourArea(cnt), cnt, approx]
-cv2.drawContours(im, contours, -1, (0, 255, 0), 2) #ve contours
+# cv2.drawContours(im, contours, -1, (0, 255, 0), 2) #ve contours
 
 # Xac dinh cac canh cua contour
 x,y,w,h = cv2.boundingRect(largest_rectangle[1])
