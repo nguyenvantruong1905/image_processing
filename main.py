@@ -1,11 +1,10 @@
 ## LOAD THU VIEN VA MODUL CAN THIET
 import numpy as np
 import cv2
-import pytesseract
-
+# import pytesseract
 from PIL import Image
 
-img = cv2.imread("test2.jpg")#load anh vao dau vao
+img = cv2.imread("test7.jpg")#load anh vao dau vao
 cv2.imshow('Input', img)
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)# chuyen sang anh xam voi phuong thuc COLOR_BGR2GRAY
 cv2.imshow('Input1', gray)
@@ -23,7 +22,7 @@ for cnt in contours:
 x,y,w,h = cv2.boundingRect(largest_rectangle[2])
 image = img[y:y + h, x : x + w]
 cv2.imshow('Input3', image)
-cv2.drawContours(img, [largest_rectangle[1]], 0, (0,255,0), 8)
+# cv2.drawContours(img, [largest_rectangle[1]], 0, (0,255,0), 8)
 cv2.waitKey()
 cv2.destroyAllWindows()
 
